@@ -1,0 +1,3 @@
+phonikud
+hebrew-tokenizer
+rich

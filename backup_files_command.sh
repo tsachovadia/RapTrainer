@@ -1,0 +1,1 @@
+mv README.md README.bak && mv project_plan.md project_plan.bak && mv database_schema.md database_schema.bak && mv "מחשבות שלי" "מחשבות שלי.bak" 

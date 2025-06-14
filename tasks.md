@@ -22,19 +22,22 @@
     - [x] Add dependencies (`flask`, `python-dotenv`, `notion-client`) to `requirements.txt`.
 
 - [ ] **Task 1.3: Backend - Core Notion Service**
-    - [ ] Create a `notion_service.py` to encapsulate all communication with the Notion API.
-    - [ ] Implement functions to fetch all items from each database (get_rhyme_groups, get_bars, etc.).
-    - [ ] Implement the `check_word` and `add_word` logic from our previous plan.
-    - [ ] Implement a function to add new `Ideas` (for the quick capture).
+    - [x] Create a `notion_service.py` to encapsulate all communication with the Notion API.
+    - [x] Implement functions to fetch all items from each database (get_rhyme_groups).
+    - [ ] Implement functions to fetch detailed data for a single rhyme group (words, bars).
+    - [ ] Implement the `check_word` and `add_word` logic.
+    - [ ] Implement a function to add new `Ideas`.
 
 - [ ] **Task 1.4: Backend - Flask Routes**
-    - [ ] Create routes for each page (`/`, `/rhyme_groups`, `/rhyme_groups/<group_id>`, `/bars`, `/ideas`).
-    - [ ] Create API endpoints for the frontend to call (`/api/add_word`, `/api/add_idea`, etc.).
+    - [x] Create routes for each page (`/`, `/rhyme-groups`).
+    - [ ] Create a new route for the rhyme group detail page (`/rhyme-groups/<group_id>`).
+    - [ ] Create API endpoints for the frontend to call (`/api/add_word`, etc.).
 
 - [ ] **Task 1.5: Frontend - HTML Templates**
-    - [ ] Create a base template (`base.html`) with navigation.
-    - [ ] Create HTML files for each page (`index.html`, `rhyme_groups.html`, etc.), inheriting from the base.
-    - [ ] Build the forms for adding words and ideas.
+    - [x] Create a base template (`base.html`) with navigation.
+    - [x] Create HTML files for the main pages (`index.html`, `rhyme_groups.html`).
+    - [ ] Create the HTML file for the rhyme group detail page.
+    - [ ] Update the rhyme groups list to include word counts and links.
 
 - [ ] **Task 1.6: Frontend - Dynamic Behavior (JavaScript)**
     - [ ] Write JavaScript to handle the interactive form submissions without full page reloads.

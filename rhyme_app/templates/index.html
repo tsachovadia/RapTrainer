@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}דף הבית{% endblock %}
+
+{% block content %}
+    <h1>מנהל החרוזים והרעיונות</h1>
+    <p>מכאן תוכל להוסיף רעיונות במהירות או לנווט לדפים האחרים כדי לנהל את התוכן שלך.</p>
+    
+    <div id="quick-capture">
+        <h2>Quick Capture</h2>
+        <textarea id="idea-textarea" placeholder="יש לי רעיון..."></textarea>
+        <button id="save-idea-btn">שמור רעיון</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %} 

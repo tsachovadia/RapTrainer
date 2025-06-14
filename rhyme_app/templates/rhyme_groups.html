@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}קבוצות חריזה{% endblock %}
+
+{% block content %}
+    <h1>קבוצות חריזה</h1>
+    
+    {% if groups %}
+        <ul>
+        {% for group in groups %}
+            {# Later, this will link to the detail page: /rhyme-groups/{{ group.id }} #}
+            <li>{{ group.name }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>עדיין לא נוצרו קבוצות חריזה. נסו להוסיף כמה מילים כדי להתחיל.</p>
+    {% endif %}
+
+{% endblock %} 

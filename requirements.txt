@@ -1,0 +1,5 @@
+
+python-dotenv
+notion-client
+flask
+flask-dotenv 

@@ -21,23 +21,24 @@
     - [x] Create `.env` to store Notion API Key and Database IDs.
     - [x] Add dependencies (`flask`, `python-dotenv`, `notion-client`) to `requirements.txt`.
 
-- [ ] **Task 1.3: Backend - Core Notion Service**
+- [/] **Task 1.3: Backend - Core Notion Service**
     - [x] Create a `notion_service.py` to encapsulate all communication with the Notion API.
     - [x] Implement functions to fetch all items from each database (get_rhyme_groups).
     - [ ] Implement functions to fetch detailed data for a single rhyme group (words, bars).
     - [ ] Implement the `check_word` and `add_word` logic.
     - [ ] Implement a function to add new `Ideas`.
 
-- [ ] **Task 1.4: Backend - Flask Routes**
+- [/] **Task 1.4: Backend - Flask Routes**
     - [x] Create routes for each page (`/`, `/rhyme-groups`).
     - [ ] Create a new route for the rhyme group detail page (`/rhyme-groups/<group_id>`).
     - [ ] Create API endpoints for the frontend to call (`/api/add_word`, etc.).
 
-- [ ] **Task 1.5: Frontend - HTML Templates**
-    - [x] Create a base template (`base.html`) with navigation.
-    - [x] Create HTML files for the main pages (`index.html`, `rhyme_groups.html`).
-    - [ ] Create the HTML file for the rhyme group detail page.
-    - [ ] Update the rhyme groups list to include word counts and links.
+- [/] **Task 1.5: Frontend - Vue.js Implementation**
+    - [x] Create a base Vue component (`App.vue`) to serve as the main view.
+    - [x] Implement logic to fetch and display the list of rhyme groups.
+    - [x] Style the list with a modern dark theme and Hebrew support.
+    - [ ] Create the component for the rhyme group detail page.
+    - [ ] Update the rhyme groups list to be navigable.
 
 - [ ] **Task 1.6: Frontend - Dynamic Behavior (JavaScript)**
     - [ ] Write JavaScript to handle the interactive form submissions without full page reloads.

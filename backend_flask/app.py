@@ -1,8 +1,11 @@
-from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 from flask_dotenv import DotEnv
 import os
 
 app = Flask(__name__)
+CORS(app) # Enable CORS for all routes
+
 # Use flask-dotenv to find and load the .env file
 env = DotEnv()
 env.init_app(app, env_file=".env", verbose_mode=True)
@@ -19,14 +22,7 @@ from notion_service import (
     delete_word
 )
 
-@app.route('/')
-def home():
-    """
-    Redirect to the main rhyme groups page.
-    """
-    return redirect(url_for('rhyme_groups_page'))
-
-@app.route('/rhyme-groups', methods=['GET'])
+@app.route('/api/rhyme-groups', methods=['GET'])
 def get_rhyme_groups_json():
     """
     Return a JSON list of all rhyme groups.
@@ -34,7 +30,7 @@ def get_rhyme_groups_json():
     groups = get_all_rhyme_groups()
     return jsonify(groups)
 
-@app.route('/rhyme-groups', methods=['POST'])
+@app.route('/api/rhyme-groups', methods=['POST'])
 def create_rhyme_group_route():
     """
     Create a new rhyme group.
@@ -49,14 +45,7 @@ def create_rhyme_group_route():
         return jsonify({"message": "Group created successfully", "group": new_group}), 201
     return jsonify({"message": "Failed to create group"}), 500
 
-@app.route('/rhyme-groups-page')
-def rhyme_groups_page():
-    """
-    Render the page that will display the rhyme groups.
-    """
-    return render_template('rhyme_groups.html')
-
-@app.route('/rhyme-groups/<group_id>', methods=['PUT'])
+@app.route('/api/rhyme-groups/<group_id>', methods=['PUT'])
 def update_rhyme_group_route(group_id):
     """
     Update a rhyme group's name.
@@ -71,7 +60,7 @@ def update_rhyme_group_route(group_id):
         return jsonify({"message": "Group updated successfully"}), 200
     return jsonify({"message": "Failed to update group"}), 500
 
-@app.route('/rhyme-groups/<group_id>', methods=['DELETE'])
+@app.route('/api/rhyme-groups/<group_id>', methods=['DELETE'])
 def delete_rhyme_group_route(group_id):
     """
     Delete (archive) a rhyme group.
@@ -81,7 +70,7 @@ def delete_rhyme_group_route(group_id):
         return jsonify({"message": "Group deleted successfully"}), 200
     return jsonify({"message": "Failed to delete group"}), 500
 
-@app.route('/rhyme-groups/<group_id>', methods=['GET'])
+@app.route('/api/rhyme-groups/<group_id>', methods=['GET'])
 def get_rhyme_group_detail_json(group_id):
     """
     Return a JSON object with details for a single rhyme group, including words.
@@ -91,7 +80,7 @@ def get_rhyme_group_detail_json(group_id):
         return jsonify(group_details)
     return jsonify({"message": "Group not found"}), 404
 
-@app.route('/rhyme-groups/<group_id>/words', methods=['POST'])
+@app.route('/api/rhyme-groups/<group_id>/words', methods=['POST'])
 def add_word_to_group_route(group_id):
     """
     Add a new word to a specific rhyme group.
@@ -106,7 +95,7 @@ def add_word_to_group_route(group_id):
         return jsonify({"message": "Word added successfully", "word": new_word}), 201
     return jsonify({"message": "Failed to add word"}), 500
 
-@app.route('/words/<word_id>', methods=['PUT'])
+@app.route('/api/words/<word_id>', methods=['PUT'])
 def update_word_route(word_id):
     """
     Update an existing word.
@@ -121,7 +110,7 @@ def update_word_route(word_id):
         return jsonify({"message": "Word updated successfully"}), 200
     return jsonify({"message": "Failed to update word"}), 500
 
-@app.route('/words/<word_id>', methods=['DELETE'])
+@app.route('/api/words/<word_id>', methods=['DELETE'])
 def delete_word_route(word_id):
     """
     Delete (archive) an existing word.
@@ -132,4 +121,4 @@ def delete_word_route(word_id):
     return jsonify({"message": "Failed to delete word"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True, port=5000) 

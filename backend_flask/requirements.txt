@@ -1,5 +1,5 @@
 python-dotenv
-notion-client 
+notion-client
 flask
 flask-dotenv
 six==1.17.0

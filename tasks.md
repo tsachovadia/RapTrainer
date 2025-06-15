@@ -37,12 +37,13 @@
     - [x] Create a base Vue component (`App.vue`) to serve as the main view.
     - [x] Implement logic to fetch and display the list of rhyme groups.
     - [x] Style the list with a modern dark theme and Hebrew support.
-    - [ ] Create the component for the rhyme group detail page.
-    - [ ] Update the rhyme groups list to be navigable.
+    - [x] Create the component for the rhyme group detail page.
+    - [x] Update the rhyme groups list to be navigable.
+    - [x] Implement form to add new words to a rhyme group.
 
-- [ ] **Task 1.6: Frontend - Dynamic Behavior (JavaScript)**
-    - [ ] Write JavaScript to handle the interactive form submissions without full page reloads.
-    - [ ] Implement logic to dynamically display suggestions and success/error messages.
+- [x] **Task 1.6: Frontend - Dynamic Behavior (JavaScript)**
+    - [x] Write JavaScript to handle the interactive form submissions without full page reloads.
+    - [x] Implement logic to dynamically display suggestions and success/error messages.
 
 - [ ] **Task 2.1**: Implement editing and deleting of items.
 - [ ] **Task 2.2**: Add search and filtering capabilities to the pages.
